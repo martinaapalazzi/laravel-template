@@ -15,6 +15,27 @@
 
 6. Aprire un altro terminale ed eseguire il comando php artisan serve
 
+# STEP BY STEP
+
+- creare nuovo database in phpmyadmin e lo scrivo nome nel file env;
+
+- php artisan make:model Train; (esempio)
+
+- php artisan make:migration create_trains_table; (esempio)
+
+- riempire la tabella con nomi di colonne dentro la funzione up()
+
+- php artisan migrate;
+
+- se modifico la tabella, cambio nome di colonne allora faccio: php artisan migrate:rollback; 
+
+- poi di nuovo: php artisan migrate;
+
+- creo un seeder per riempire le mie colonne di dati, facendo il comando: php artisan make:seeder TrainSeeder (NomeModelSeeder); (esempio)
+
+- dopo aver riempito le colonne dei nostri dati allora facciamo il comando: php artisan db:seed --class=TrainSeeder; (questo esegue i seeder) (esempio)
+
+
 # Passi per creare un'architettura CRUD completa
 
 - Inseriamo i parametri corretti nel file .env per connetterci al database di interesse.
